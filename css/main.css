@@ -1,0 +1,364 @@
+.file {
+    visibility: hidden;
+    position: absolute;
+  }
+
+.bg-light {
+    background-color: #182531 !important;
+}
+.navbar-brand > span{
+    font-size: 30px;
+} 
+.navbar-brand span:first-child{ /*اول سبان في الترتيب*/
+    color: #c6d7dd;
+}
+
+.navbar-brand span:first-child:hover{
+    color: #fff;
+}
+.navbar-brand span:last-child {/*اخر سبان في الترتيب*/
+    color: #a29bfe;
+}
+.navbar-brand span:last-child:hover {
+    color: #c2beff;
+}
+.navbar-nav .active .nav-link{
+    background-color: #a29bfe;
+    
+}
+
+.navbar-nav{
+    margin-top: -23px;
+    margin-bottom: -22px;
+}
+.navbar-nav .nav-item .active{
+    margin-bottom: 22px;
+}
+.nav-link {   
+    padding: 1.23rem 2rem
+    
+}
+.navbar-nav .nav-link {
+    font-size: 22px;
+    text-transform:none;
+    margin-left: 25px;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: rgb(196, 196, 196);
+    transition: padding 0.5s ease-in-out;
+    -webkit-transition: padding 0.5s ease-in-out;
+    -o-transition: padding 0.5s ease-in-out;
+    -moz-transition: padding 0.5s ease-in-out;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #fff;
+}
+
+.navbar-nav .active .nav-link{
+    color: #fff !important;  /*تعمل اوفر رايد علي اللون*/
+
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
+    color: rgb(196, 196, 196);
+
+}
+
+.dropdown-menu{
+    background-color: #182531;
+    border-top: 2px solid #a29bfe;
+    min-width: 200px;
+    margin: 0;
+}
+.dropdown-item{
+    color: rgb(196, 196, 196);
+    transition: padding 0.5s ease;
+    -webkit-transition: padding 0.5s ease;
+    -o-transition: padding 0.5s ease;
+    -moz-transition: padding 0.5s ease;
+}
+.dropdown-item > a:hover,
+.dropdown-item > a:focus
+{
+    background-color: #a29bfe;
+    padding-left:25px;
+}
+
+.dropdown-menu .dropdown-divider
+{
+    border-top: 1px solid #a29bfe;
+}
+
+
+
+.ai{
+    margin-top: 30px;
+    padding-bottom: 200px;
+}
+
+.form-control{
+    padding: 1.6rem 1.75rem;
+}
+.btn-primary{
+    background-color: #a29bfe;
+    border-color:#a08cb3;
+}
+.btn-primary:hover{
+    background-color: #c2beff;
+    border-color:#a08cb3;
+}
+
+
+
+.result{
+    background-color: #EEE;
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+.result h1{
+    margin-bottom: 40px;
+}
+.result .result_box{
+    background-color: #FFF;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #DDD;
+    margin-bottom: 15px;
+    justify-content: flex-end;
+}
+.result .result_box h2{
+    margin: 5px 0 15px;
+}
+.result .result_box p{
+    font-size: 35px;
+    font-weight: bold;
+    color: #666;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;  /*تخلي الديف دايرة*/
+    background-color: #f3f3f3;
+    line-height: 100px; /*توسطن الكلام جوه الديف*/
+    -webkit-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+.result .result_box:hover p{  /*لما اروح عند البوكس يعمل حاجة في ال p*/
+    -webkit-transform: scale(1.1,1.1) rotate(360deg);
+    -o-transform: scale(1.1,1.1) rotate(360deg);
+    -moz-transform: scale(1.1,1.1) rotate(360deg);
+    transform: scale(1.1,1.1) rotate(360deg);
+    border: 4px solid #FFF;
+}
+.box4{
+    padding-bottom: 50px !important;
+}
+
+.box5{
+    padding-bottom: 37px !important;
+}
+.box6{
+    padding-bottom: 23px !important;
+}
+.box7{
+    padding-bottom: 38px !important;
+}
+
+/*contact us*/
+.contactus .field{
+    /*margin-top: 600px;*/
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #DDD;
+    background: rgba(19, 14, 44, 0.7);
+    min-height: 300px;
+}
+.contactus h1{
+    margin-bottom: 30px;
+}
+.contactus p{
+    margin-bottom: 40px;
+}
+.contactus textarea{
+    height: 108px;
+}
+.contactus input[type="text"], 
+.contactus textarea{
+    background: rgba(2,2,2,0);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius:0;
+}
+
+
+/*footer*/
+.footer{
+    color: #AAA;
+}
+.footer .copy{
+    background-color: rgb(7, 1, 12);
+    padding: 15px 0;
+}
+.footer .copy span{
+    color: #a29bfe;
+}
+
+
+
+
+
+/*login*/
+.login{
+    margin-top: 30px;
+}
+.flog{
+    padding: 30px;
+}
+.name, .passl{
+    font-weight: bold;
+}
+
+.login input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+.login input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.login hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+
+/* Set a style for all buttons */
+.login button {
+    background-color: #a29bfe;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    }
+
+.login button:hover {
+            opacity:1;
+}
+
+
+
+/*signup*/
+.signup{
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.fsign{
+    padding: 30px 15px;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+            * {box-sizing: border-box}
+
+            /* Full-width input fields */
+.signup input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+.signup input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.signup hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+
+/* Set a style for all buttons */
+.signup button {
+    background-color: #a29bfe;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.8;
+    }
+
+.signup button:hover {
+            opacity:1;
+            }
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+            padding: 14px 20px;
+            background-color: #040faa;
+            }
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+            float: left;
+            width: 50%;
+            }
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+        width: 100%;
+    }
+}
+
+
+/*patient*/
+form{
+    padding: 30px;
+    margin-top: 20px;
+}
+.ph1{
+    margin-bottom:20px;
+}
+.form-row{
+    margin-bottom: 30px;
+}
+.pdf{
+    background-color: #a29bfe;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.8;
+}
+.pdf:hover {
+    opacity:1;
+    }

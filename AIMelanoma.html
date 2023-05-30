@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+  <title>AI Melanoma</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Import TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+  <!-- Import tfjs-vis -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
+  <!-- Import the main script file src="script.js"-->
+  <script type="module">
+    let model = await tf.loadLayersModel('./tfjs_Seq_model/model.json');
+
+
+    function onClick(model) {
+      const imgEl = document.getElementById('preview');
+
+      let tensor = tf.browser.fromPixels(imgEl)
+        .resizeNearestNeighbor([28, 28])
+        .toFloat()
+        .expandDims()
+        .cast('float32');
+
+      var classes = {
+        4: 'melanocytic nevi',
+        6: 'melanoma',
+        2: 'benign keratosis-like lesions',
+        1: 'basal cell carcinoma',
+        5: 'pyogenic granulomas and hemorrhage',
+        0: 'Actinic keratoses and intraepithelial carcinomae',
+        3: 'dermatofibroma'
+      };
+      document.getElementById("output").innerText = classes[String(tf.squeeze(model.predict(tensor).argMax(-1)).dataSync())];
+    }
+    document.getElementById('predict').addEventListener('click', () => onClick(model));
+  </script>
+</head>
+
+
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="AIMelanoma.html"> <span>AI</span><span> MelanoMa</span> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="AIMelanoma.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#move">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Patient.html">Patient</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Log in
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="login.html">Log in</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="Signup.html">Sign up</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <section class="ai text-center">
+    <div class="container">
+      <div class="row">
+        <div class="ml-2 col-sm-12">
+          <div id="msg"></div>
+          <form method="post" id="image-form">
+            <input type="file" name="img[]" class="file" accept="image/*">
+            <div class="input-group my-3">
+              <input type="text" class="form-control" disabled placeholder="Upload Image" id="file">
+              <div class="input-group-append">
+                <button type="button" class="browse btn btn-primary">Browse</button>
+                <button type="button" class="btn btn-primary" id="predict">Predict</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="ml-2 col-sm-12">
+          <img src="" id="preview" class="img-thumbnail">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="result text-center">
+    <div class="container">
+      <h1>Results</h1>
+      <div class="row">
+        <div class="col-sm-12 col-xs-12">
+          <div id='output' class="result_box"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="contactus text-center">
+    <a name="move"></a>
+    <div class="field">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p class="lead">Feel Free to Keep Touch With Us</p>
+        <form role="form">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control input-lg" type="text" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <input class="form-control input-lg" type="text" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input class="form-control input-lg" type="text" placeholder="Phone">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <textarea class="form-control input-lg" placeholder="Your Message"></textarea>
+                <!--مربع كتابة كبير-->
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Contact Us</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="footer">
+    <div class="copy text-center">
+      CopyRights &copy; 2021 <span>AI Melanoma</span>.lnc &nbsp;
+      <i class="fab fa-facebook fa-lg"></i>
+      <i class="fab fa-instagram fa-lg"></i>
+      <i class="fab fa-twitter fa-lg"></i>
+      <i class="fab fa-youtube fa-lg"></i>
+    </div>
+  </section>
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/AIMelanoma.js"></script>
+</body>
+
+</html>
